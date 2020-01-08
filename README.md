@@ -19,6 +19,17 @@ You can configure the proxy to support only access from your radio station front
 
 ## Setup & Configuration
 
+### Server
+
 - create a webroot and add the php files in this repository to it
 - adjust configuration in `index.example.php`
 - rename `index.example.php` to `index.php`
+
+### Client
+
+- you can embed the proxied stream to your website with this html5 code snipped
+```
+<audio id="player-control" preload="none">
+    <source src="https://www.example.org/streamproxy" preload="none">
+</audio>
+```
