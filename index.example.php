@@ -36,4 +36,8 @@ $streamproxy = new icecastStreamProxy(array(
      */
     'sp_lock_http_referer' => 'https://www.my-cool-radio-station.org'
 ));
-$streamproxy->run();
+
+/**
+ * uncomment this line, when you're ready
+ */
+//$streamproxy->run();
