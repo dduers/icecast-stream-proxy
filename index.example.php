@@ -4,12 +4,14 @@ $streamproxy = new icecastStreamProxy(array(
 
     /**
      * the root url of your icecast server
+     * note: no trailing '/'
      */
-    'ic_url' => 'https://my.icecast-server.org',
+    'ic_url' => 'https://my.icecast-server.org:8000',
     
     /**
      * ogg and mp3 mounts
      * if a mp3 mount is given, it will fall back to it for microsoft browsers
+     * note: leading '/'
      */
     'ic_mount_ogg' => '/stream.ogg',
     'ic_mount_mp3' => '/stream.mp3',
@@ -17,6 +19,7 @@ $streamproxy = new icecastStreamProxy(array(
     /**
      * stats page of the ice cast server
      * the stats are available with /?status on the url where this script is hosted
+     * note: leading '/'
      */
     'ic_mount_stats' => '/status-json.xsl',
     
@@ -33,6 +36,7 @@ $streamproxy = new icecastStreamProxy(array(
      * frontend website
      * if you give an url here, all stream and stats requests are
      * limited to this referer (uses http referer header)
+     * note: no trailing '/'
      */
     'sp_lock_http_referer' => 'https://www.my-cool-radio-station.org'
 ));

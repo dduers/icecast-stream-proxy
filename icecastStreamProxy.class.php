@@ -8,7 +8,7 @@ class icecastStreamProxy
 {
     private $config;
     private $defaults = array(
-        'ic_url' => 'http://icecast.example.org',
+        'ic_url' => 'http://localhost:8000',
         'ic_mount_stats' => '/status-json.xsl',
         'ic_mount_stats_mime' => 'application/json',
         'ic_mount_ogg' => '/stream.ogg',
