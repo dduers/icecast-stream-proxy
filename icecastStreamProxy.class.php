@@ -1,4 +1,9 @@
 <?php
+/**
+ * icecastStreamProxy Class
+ * by Daniel Duersteler, 2020
+ * https://github.com/dduers
+ */
 class icecastStreamProxy
 {
 	private $config;
