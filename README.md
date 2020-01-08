@@ -33,3 +33,8 @@ You can configure the proxy to support only access from your radio station front
     <source src="https://www.example.org/streamproxy" preload="none">
 </audio>
 ```
+
+## Recommendations
+
+- serve the icecast server, the icecast proxy and your radio station's website over `https://`
+- (!) the http basic auth credentials are at risk when no secure https connection is uses
