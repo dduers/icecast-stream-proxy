@@ -12,6 +12,12 @@
             "email": "daniel.duersteler@gmail.com"
         }
     ],
+    "repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/dduers/icecast-stream-proxy"
+		}
+	],
     "autoload": {
         "psr-4": {
             "": "src/"

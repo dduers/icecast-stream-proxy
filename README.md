@@ -29,8 +29,8 @@ You can configure the proxy to support only access from your radio station front
 
 - you can embed the proxied stream to your website with this html5 code snipped
 ```
-<audio id="player-control" preload="none">
-    <source src="https://www.example.org/streamproxy" preload="none">
+<audio preload="none">
+    <source src="https://www.example.org/streamproxy">
 </audio>
 ```
 
