@@ -17,7 +17,8 @@
 			"type": "vcs",
 			"url": "https://github.com/dduers/icecast-stream-proxy"
 		}
-	],
+    ],
+    "homepage" : "https://www.xsite.ch",
     "autoload": {
         "psr-4": {
             "": "src/"
