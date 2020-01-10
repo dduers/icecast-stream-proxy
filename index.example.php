@@ -1,6 +1,6 @@
 <?php
 /**
- * icecastStreamProxy
+ * Dduers\IcecastStreamProxy
  * by Daniel Duersteler, 2020, https://github.com/dduers
  * this is an example configuration
  */
@@ -15,15 +15,17 @@ set_time_limit (0);
 /**
  * include the icecast stream proxy class
  */
-require_once 'icecastStreamProxy.class.php';
+require_once 'src/dduers/icecaststreamproxy.php';
 
 /**
  * create class instance with your configuration
  */
-$streamproxy = new icecastStreamProxy(array(
+$streamproxy = new \Dduers\IcecastStreamProxy(array(
 
     /**
      * the root url of your icecast server
+     * change this, if your icecast server is not running on the same host as the 
+     * icecast stream proxy does
      * note: no trailing '/'
      * default: 'http://localhost:8000'
      */

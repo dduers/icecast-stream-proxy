@@ -1,9 +1,11 @@
 <?php
+namespace Dduers;
+
 /**
- * icecastStreamProxy
+ * Dduers\IcecastStreamProxy
  * by Daniel Duersteler, 2020, https://github.com/dduers
  */
-class icecastStreamProxy
+class IcecastStreamProxy
 {
     private $config;
     private $defaults = array(
