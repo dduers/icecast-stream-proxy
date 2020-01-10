@@ -21,9 +21,8 @@ You can configure the proxy to support only access from your radio station front
 
 ### Server
 
-- create a webroot and add the php files in this repository to it
-- adjust configuration in `index.example.php`
-- rename `index.example.php` to `index.php`
+- `composer require dduers/icecast-stream-proxy`
+- configuration is documented in `examples/example.php`
 
 ### Client
 

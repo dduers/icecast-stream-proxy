@@ -15,7 +15,7 @@ set_time_limit (0);
 /**
  * include the icecast stream proxy class
  */
-require_once 'src/dduers/icecaststreamproxy.php';
+require 'vendor/autoload.php';
 
 /**
  * create class instance with your configuration
