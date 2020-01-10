@@ -1,6 +1,6 @@
 <?php
 /**
- * icecastStreamProxy Class
+ * icecastStreamProxy
  * by Daniel Duersteler, 2020
  * https://github.com/dduers
  */
@@ -48,6 +48,8 @@ class icecastStreamProxy
     
     function run()
     {
+		if ($this->config['sp_lock_http_referer'] && !isset($_SERVER['HTTP_REFERER']))
+			return false;
         if ($this->config['sp_lock_http_referer'] && (strpos($_SERVER['HTTP_REFERER'], $this->config['sp_lock_http_referer'].'/') === false))
             return false;
         if(isset($_GET[$this->config['sp_stats_get_var']]))

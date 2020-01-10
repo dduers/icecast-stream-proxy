@@ -1,47 +1,79 @@
 <?php
+/**
+ * allow php script to run forever
+ * this needs to be supported by your webserver and php installation
+ * otherwise the stream will break after a certain few seconds
+ */
+set_time_limit (0);
+
+/**
+ * include the class
+ */
 require 'icecastStreamProxy.class.php';
+
+/**
+ * create class instance with your configuration
+ */
 $streamproxy = new icecastStreamProxy(array(
 
     /**
      * the root url of your icecast server
      * note: no trailing '/'
+	 * default: 'http://localhost:8000'
      */
-    'ic_url' => 'https://my.icecast-server.org:8000',
-    
-    /**
-     * ogg and mp3 mounts
-     * if a mp3 mount is given, it will fall back to it for microsoft browsers
-     * note: leading '/'
-     */
-    'ic_mount_ogg' => '/stream.ogg',
-    'ic_mount_mp3' => '/stream.mp3',
-    
+    'ic_url' => 'http://localhost:8000',
+
     /**
      * stats page of the ice cast server
      * the stats are available with /?status on the url where this script is hosted
      * note: leading '/'
+	 * default: '/status-json.xsl'
      */
     'ic_mount_stats' => '/status-json.xsl',
-    
+
+    /**
+     * mime type of the stats
+	 * default: 'application/json'
+     */
+    'ic_mount_stats_mime' => 'application/json',
+	
+    /**
+     * ogg encoded mount
+	 * default for all browsers as long no mp3 mount is specified
+     * note: leading '/'
+	 * default: 'stream.ogg'
+     */
+    'ic_mount_ogg' => '/stream.ogg',
+	
+    /**
+     * mp3 encoded mount
+	 * if speciefied, microsoft browsers fall back to it
+     * note: leading '/'
+	 * default: NULL
+     */
+    'ic_mount_mp3' => '/stream.mp3',
+
     /**
      * http basic auth credentials
      * if one of those parameters is missing, http basic auth is disabled
      * note: the stats page and all streams must share the same credentials
      * note: your icecast server must be setup to supprt http basic auth
+	 * default: both NULL
      */
-    'ic_basic_auth_username' => 'proxy',
-    'ic_basic_auth_password' => 'proxy_hackme',
+    'ic_basic_auth_username' => NULL,
+    'ic_basic_auth_password' => NULL,
     
     /**
      * frontend website
      * if you give an url here, all stream and stats requests are
      * limited to this referer (uses http referer header)
      * note: no trailing '/'
+	 * default: NULL
      */
-    'sp_lock_http_referer' => 'https://www.my-cool-radio-station.org'
+    'sp_lock_http_referer' => 'https://www.radiostream.ch'
 ));
 
 /**
  * uncomment this line, when you're ready
  */
-//$streamproxy->run();
+$streamproxy->run();
