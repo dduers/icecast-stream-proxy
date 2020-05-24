@@ -3,7 +3,7 @@ namespace Dduers;
 
 /**
  * Dduers\IcecastStreamProxy
- * by Daniel Duersteler, 2020, https://github.com/dduers
+ * by Daniel Duersteler, http://www.xsite.ch
  */
 class IcecastStreamProxy
 {
