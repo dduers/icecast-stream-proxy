@@ -2,23 +2,26 @@
     "name": "dduers/icecast-stream-proxy",
     "description": "secure and lockdown your icecast server",
     "type": "library",
+    "keywords": ["icecast", "stream", "radio", "proxy"],
+    "homepage": "http://www.xsite.ch",
+    "license": "MIT",
     "require": {
         "php": ">=5.3"
     },
-    "license": "MIT",
     "authors": [
         {
             "name": "Daniel Duersteler",
-            "email": "daniel.duersteler@gmail.com"
+            "email": "daniel.duersteler@gmail.com",
+            "homepage": "http://www.xsite.ch",
+            "role": "Developer"
         }
     ],
     "repositories": [
-		{
-			"type": "vcs",
-			"url": "https://github.com/dduers/icecast-stream-proxy"
-		}
+        {
+            "type": "vcs",
+            "url": "https://github.com/dduers/icecast-stream-proxy"
+        }
     ],
-    "homepage" : "https://www.xsite.ch",
     "autoload": {
         "psr-4": {
             "": "src/"
