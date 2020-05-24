@@ -1,16 +1,16 @@
 <?php
 /**
  * Dduers\IcecastStreamProxy
- * by Daniel Duersteler, 2020, https://github.com/dduers
- * this is an example configuration
+ * by Daniel Duersteler, http://www.xsite.ch
+ * this is an example configuration and startup script
  */
 
 /**
  * allow php script to run forever
  * this needs to be supported by your webserver and php installation
- * otherwise the stream will break after a certain few seconds
+ * otherwise the stream will break after a certain few seconds or minutes
  */
-set_time_limit (0);
+set_time_limit(0);
 
 /**
  * include the icecast stream proxy class
@@ -95,6 +95,33 @@ $streamproxy = new \Dduers\IcecastStreamProxy(array(
 ));
 
 /**
- * uncomment this line, when you're ready
+ * start streaming or fallback on error
  */
-//$streamproxy->run();
+if ($streamproxy->run() === false) {
+
+    /**
+     * your error handling comes here.
+     * here are some examples:
+     */
+
+    /** 
+     * option 1:
+     * send a http error code
+     * this is best and also suits for ajax requests to the proxy
+     */
+    //http_response_code(403);
+
+    /** 
+     * option 2:
+     * output a readable error message
+     */
+    //echo "ACCESS_DENIED";
+
+    /**
+     * option 3:
+     * display a custom error page
+     */
+    //include "403.html";
+
+    die();
+};
